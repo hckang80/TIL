@@ -52,5 +52,8 @@
 
   Number, Math, RegExr
 
-- 180208 .md 
+- 180208.md 
   Array, Execution Context, Closure
+
+- 180219.md 
+  DOM
