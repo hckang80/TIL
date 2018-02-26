@@ -35,4 +35,4 @@
 - [180222.md](./_180222.md)  
   Ajax - JSON, XMLHttpRequest
 - [180223.md](./_180223.md)  
-  REST API,
+  REST API
