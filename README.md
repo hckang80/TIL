@@ -68,8 +68,6 @@
 
   Class, Promise, Module
 
-  ​
-
 - [180302.md](./_180302.md)
 
   Websocket
@@ -77,3 +75,11 @@
 - [180305.md](./_180305.md)
 
   Node.js, Module, Express
+
+  ​
+
+## TypeScript
+
+- [180308.md](./_180308.md)
+
+특장점, 클래스, 인터페이스, 제네릭
