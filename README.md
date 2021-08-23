@@ -6,6 +6,7 @@
   
   ```js
     // params: { id: [1, 2] } => api-end-point?id=1&id=2
+
     axios.defaults.paramsSerializer = (paramObj) => {
       const params = new URLSearchParams()
       for (const key in paramObj) {
