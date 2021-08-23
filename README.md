@@ -1,9 +1,8 @@
 # 목차
 
 ## 그날의 기억
-- Setting paramsSerializer
 <details>
-  <summary>Click to expand!</summary>
+  <summary>paramsSerializer For the GET parameters</summary>
   
   ```js
     // params: { id: [1, 2] } => api-end-point?id=1&id=2
