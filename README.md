@@ -2,23 +2,27 @@
 
 ## 그날의 기억
 - Setting paramsSerializer
-```js
-  // params: { id: [1, 2] } => api-end-point?id=1&id=2
-
-  axios.defaults.paramsSerializer = (paramObj) => {
-    const params = new URLSearchParams()
-    for (const key in paramObj) {
-      if (Array.isArray(paramObj[key])) {
-        for (let i = 0; i < paramObj[key].length; i++) {
-          params.append(key, paramObj[key][i])
+<details>
+  <summary>Click to expand!</summary>
+  
+  ```js
+    // params: { id: [1, 2] } => api-end-point?id=1&id=2
+    axios.defaults.paramsSerializer = (paramObj) => {
+      const params = new URLSearchParams()
+      for (const key in paramObj) {
+        if (Array.isArray(paramObj[key])) {
+          for (let i = 0; i < paramObj[key].length; i++) {
+            params.append(key, paramObj[key][i])
+          }
+        } else {
+          params.append(key, paramObj[key])
         }
-      } else {
-        params.append(key, paramObj[key])
       }
+      return params.toString()
     }
-    return params.toString()
-  }
-```
+  ```
+</details>
+
 - [remembers.md](./_remembers.md)  
   회사업무, 개발그룹 등을 통해 얻은 기억 모음
 
