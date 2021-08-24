@@ -58,7 +58,7 @@
   <summary>Awesome Pattern</summary>
 
   ```js
-  // Random ID
+  // Generate a random ID
   const id = Math.random().toString(36).slice(2)
   console.log(id) // p0ambi8jhik
 
