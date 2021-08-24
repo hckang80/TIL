@@ -54,6 +54,21 @@
   ### iOS
 </details>
 
+<details>
+  <summary>Awesome Pattern</summary>
+
+  ```js
+  // Random ID
+  const id = Math.random().toString(36).slice(2)
+  console.log(id) // p0ambi8jhik
+
+  // Shuffle an array
+  const arr = ['A', 'B', 'C', 'D', 'E']
+  const shuffled = arr.slice().sort(() => Math.random() - 0.5)
+  console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
+  ```
+</details>
+
 ## 컴퓨터 공학
 
 - [180110.md](./_180110.md)  
