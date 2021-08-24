@@ -1,8 +1,8 @@
 # 목차
 
-## 개발과 함께 쌓인 나의 기억 모음
+## 개발하며 쌓인 나의 기억 모음
 <details>
-  <summary>paramsSerializer For the GET parameters</summary>
+  <summary>paramsSerializer For the GET parameters (feat. axios)</summary>
   
   ```js
   // url: 'api-end-point' , params: { id: [1, 2] } => api-end-point?id=1&id=2
@@ -32,14 +32,27 @@
   // 연결 가능한 텍스트를 링크 요소로 변경
   const replaceURLWithHTMLLinks = (str) => {
     const regURL = new RegExp('(http|https|ftp|telnet|news|irc)://([-/.a-zA-Z0-9_~#%$?&=:200-377()]+)', 'gi')
-    return str.replace(regURL, "<a href='$1://$2' target='_blank'>$1://$2</a>")
+    return str.replace(regURL, "<a href='$1://$2' target='_blank' rel='noreferrer noopener'>$1://$2</a>")
   }
   ```
 </details>
 
-- [remembers.md](./_remembers.md)  
-  회사업무, 개발그룹 등을 통해 얻은 기억 모음
+<details>
+  <summary>CSS Issues</summary>
+  
+  ```js
+  // Comming Soon...
+  ```
+</details>
 
+<details>
+  <summary>Hybrid App Issues</summary>
+
+  ### AOS
+  - 인풋 요소에 포커스가 되어도 키패드가 올라오지 않으므로 앱에 요청 필요
+  - Alert으로 디버깅이 바로 되지 않으므로 필요한 경우 앱에 요청 필요
+  ### iOS
+</details>
 
 ## 컴퓨터 공학
 
