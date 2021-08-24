@@ -1,25 +1,39 @@
 # 목차
 
-## 그날의 기억
+## 개발과 함께 쌓인 나의 기억 모음
 <details>
   <summary>paramsSerializer For the GET parameters</summary>
   
   ```js
-    // params: { id: [1, 2] } => api-end-point?id=1&id=2
-
-    axios.defaults.paramsSerializer = (paramObj) => {
-      const params = new URLSearchParams()
-      for (const key in paramObj) {
-        if (Array.isArray(paramObj[key])) {
-          for (let i = 0; i < paramObj[key].length; i++) {
-            params.append(key, paramObj[key][i])
-          }
-        } else {
-          params.append(key, paramObj[key])
+  // url: 'api-end-point' , params: { id: [1, 2] } => api-end-point?id=1&id=2
+  axios.defaults.paramsSerializer = (paramObj) => {
+    const params = new URLSearchParams()
+    for (const key in paramObj) {
+      if (Array.isArray(paramObj[key])) {
+        for (let i = 0; i < paramObj[key].length; i++) {
+          params.append(key, paramObj[key][i])
         }
+      } else {
+        params.append(key, paramObj[key])
       }
-      return params.toString()
     }
+    return params.toString()
+  }
+  ```
+</details>
+
+<details>
+  <summary>REGEX</summary>
+  
+  ```js
+  // 비밀번호(대소문자, 숫자, 특문 포함 8자리 이상)
+  /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[`~!@#$%^&*()-_=+[{\]}\\|;:'",<.>/?]).{8,}$/
+
+  // 연결 가능한 텍스트를 링크 요소로 변경
+  const replaceURLWithHTMLLinks = (str) => {
+    const regURL = new RegExp('(http|https|ftp|telnet|news|irc)://([-/.a-zA-Z0-9_~#%$?&=:200-377()]+)', 'gi')
+    return str.replace(regURL, "<a href='$1://$2' target='_blank'>$1://$2</a>")
+  }
   ```
 </details>
 
