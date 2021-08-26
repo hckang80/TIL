@@ -1,26 +1,6 @@
 # 목차
 
 ## 개발하며 쌓인 나의 기억 모음
-<details>
-  <summary>paramsSerializer For the GET parameters (feat. axios)</summary>
-  
-  ```js
-  // url: 'api-end-point' , params: { id: [1, 2] } => api-end-point?id=1&id=2
-  axios.defaults.paramsSerializer = (paramObj) => {
-    const params = new URLSearchParams()
-    for (const key in paramObj) {
-      if (Array.isArray(paramObj[key])) {
-        for (let i = 0; i < paramObj[key].length; i++) {
-          params.append(key, paramObj[key][i])
-        }
-      } else {
-        params.append(key, paramObj[key])
-      }
-    }
-    return params.toString()
-  }
-  ```
-</details>
 
 <details>
   <summary>REGEX</summary>
@@ -66,6 +46,27 @@
   const arr = ['A', 'B', 'C', 'D', 'E']
   const shuffled = arr.slice().sort(() => Math.random() - 0.5)
   console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
+  ```
+</details>
+
+<details>
+  <summary>paramsSerializer For the GET parameters (feat. axios)</summary>
+  
+  ```js
+  // url: 'api-end-point' , params: { id: [1, 2] } => api-end-point?id=1&id=2
+  axios.defaults.paramsSerializer = (paramObj) => {
+    const params = new URLSearchParams()
+    for (const key in paramObj) {
+      if (Array.isArray(paramObj[key])) {
+        for (let i = 0; i < paramObj[key].length; i++) {
+          params.append(key, paramObj[key][i])
+        }
+      } else {
+        params.append(key, paramObj[key])
+      }
+    }
+    return params.toString()
+  }
   ```
 </details>
 
