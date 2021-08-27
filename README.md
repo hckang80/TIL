@@ -18,10 +18,14 @@
 </details>
 
 <details>
-  <summary>CSS Issues</summary>
+  <summary>CSS Tricks</summary>
   
-  ```js
-  // Comming Soon...
+  ```css
+  /* Hidden cursor only */
+  input {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
   ```
 </details>
 
