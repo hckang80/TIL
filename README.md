@@ -48,7 +48,7 @@
 
   // Shuffle an array
   const arr = ['A', 'B', 'C', 'D', 'E']
-  const shuffled = arr.slice().sort(() => Math.random() - 0.5)
+  const shuffled = [...arr].sort(() => Math.random() - 0.5)
   console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
   ```
 </details>
