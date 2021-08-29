@@ -30,12 +30,20 @@
 </details>
 
 <details>
-  <summary>Hybrid App Issues</summary>
+  <summary>Mobile Issues</summary>
 
   ### AOS
-  - 인풋 요소에 포커스가 되어도 키패드가 올라오지 않음(앱에서 해결)
-  - Alert으로 디버깅이 바로 되지 않음(앱에서 해결)
+  - 웹뷰에서 인풋 요소에 포커스가 되어도 키패드가 올라오지 않음(앱에서 해결)
+  - 웹뷰에서 Alert으로 디버깅이 바로 되지 않음(앱에서 해결)
+
   ### iOS
+  - 3D transform에서 z-index가 제대로 인식되지 않는 경우
+  ```css
+  selector {
+    transform-style: preserve-3d;
+    transform: translateZ(-1000px);
+  }
+  ```
 </details>
 
 <details>
