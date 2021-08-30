@@ -60,7 +60,23 @@
   console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
 
   // Object deep search
+  const objectDeepSearch = ({ model = {}, path = '' }) => {
+    const list = path.split('.')
+    const key = list.pop()
+    const pointer = list.reduce((object, prop) => {
+      if (object[prop] === undefined) object[prop] = {}
+      return object[prop]
+    }, model)
+    const result = { pointer, key }
+    return result
+  }
 
+  const model = {
+    name: {
+      first: 'Hee-chang'
+    }
+  }
+  console.log(objectDeepSearch({ model, path: 'name.first' })) // { pointer: { first: 'Hee-chang' }, key: 'first' }
   ```
 </details>
 
