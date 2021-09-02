@@ -104,7 +104,7 @@
 <details>
   <summary>Reference</summary>
   
-  [UserAgent](https://jsfiddle.net/xkfdnwzq/show)
+  [User Agent 등 확인](https://jsfiddle.net/xkfdnwzq/show){:target="_blank"}
 </details>
 
 ## 컴퓨터 공학
