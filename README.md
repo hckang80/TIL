@@ -104,7 +104,7 @@
 <details>
   <summary>Reference</summary>
   
-  <a href="https://jsfiddle.net/xkfdnwzq/show" target="_blank" rel="noreferrer noopener">User Agent 등의 속성 출력</a>
+  [User Agent 등의 속성 출력](https://jsfiddle.net/xkfdnwzq/show)
 </details>
 
 ## 컴퓨터 공학
