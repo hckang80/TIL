@@ -101,6 +101,12 @@
   ```
 </details>
 
+<details>
+  <summary>Reference</summary>
+  
+  [UserAgent](https://jsfiddle.net/xkfdnwzq/show)
+</details>
+
 ## 컴퓨터 공학
 
 - [180110.md](./_180110.md)  
