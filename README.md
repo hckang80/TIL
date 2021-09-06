@@ -47,7 +47,7 @@
 </details>
 
 <details>
-  <summary>Awesome Pattern</summary>
+  <summary>Generator</summary>
 
   ```js
   // Generate a random ID
@@ -77,6 +77,28 @@
     }
   }
   console.log(objectDeepSearch({ model, path: 'name.first' })) // { pointer: { first: 'Hee-chang' }, key: 'first' }
+
+  // Compact Number
+  const compactNumber = (value) => {
+    const suffixes = ['', 'k', 'm', 'b', 't']
+    const suffixNum = Math.floor(('' + value).length / 3)
+    let shortValue = parseFloat((suffixNum ? value / Math.pow(1000, suffixNum) : value).toPrecision(2))
+    !(shortValue % 1) && (shortValue = shortValue.toFixed(1))
+    return shortValue + suffixes[suffixNum]
+  }
+  console.log(compactNumber(100000)) // '0.1m'
+
+  // Ordinal Suffix
+  const ordinalSuffix = (number) => {
+    const j = number % 10
+    const k = number % 100
+    let suffix = 'th'
+    j === 1 && k !== 11 && (suffix = 'st')
+    j === 2 && k !== 12 && (suffix = 'nd')
+    j === 3 && k !== 13 && (suffix = 'rd')
+    return `${number}${suffix}`
+  }
+  console.log(ordinalSuffix(1)) // '1st'
   ```
 </details>
 
