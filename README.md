@@ -15,6 +15,14 @@
     return str.replace(regURL, "<a href='$1://$2' target='_blank' rel='noreferrer noopener'>$1://$2</a>")
   }
   ```
+
+  ### 특수기호
+  - \d : 숫자만
+  - \D : \d와 반대
+  - \w : 영문 대소문자 + 숫자 + 언더바
+  - \W : \w 이외의 문자
+  - \s : 공백 문자
+  - \S : \s 이외의 문자
 </details>
 
 <details>
