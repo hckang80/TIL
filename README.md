@@ -8,7 +8,9 @@
   ```js
   // 비밀번호(대소문자, 숫자, 특문 포함 8자리 이상)
   /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[`~!@#$%^&*()-_=+[{\]}\\|;:'",<.>/?]).{8,}$/
-
+  ```
+  
+  ```js
   // 연결 가능한 텍스트를 링크 요소로 변경
   const replaceURLWithHTMLLinks = (str) => {
     const regURL = new RegExp('(http|https|ftp|telnet|news|irc)://([-/.a-zA-Z0-9_~#%$?&=:200-377()]+)', 'gi')
@@ -61,12 +63,16 @@
   // Generate a random ID
   const id = Math.random().toString(36).slice(2)
   console.log(id) // p0ambi8jhik
-
+  ```
+  
+  ```js
   // Shuffle an array
   const arr = ['A', 'B', 'C', 'D', 'E']
   const shuffled = [...arr].sort(() => Math.random() - 0.5)
   console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
-
+  ```
+  
+  ```js
   // Object deep search
   const objectDeepSearch = ({ model = {}, path = '' }) => {
     const list = path.split('.')
@@ -85,7 +91,9 @@
     }
   }
   console.log(objectDeepSearch({ model, path: 'name.first' })) // { pointer: { first: 'Hee-chang' }, key: 'first' }
-
+  ```
+  
+  ```js
   // Compact Number
   const compactNumber = (value) => {
     const suffixes = ['', 'k', 'm', 'b', 't']
@@ -95,7 +103,9 @@
     return shortValue + suffixes[suffixNum]
   }
   console.log(compactNumber(100000)) // '0.1m'
-
+  ```
+  
+  ```js
   // Ordinal Suffix
   const ordinalSuffix = (number) => {
     const j = number % 10
