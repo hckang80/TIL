@@ -42,9 +42,9 @@
 <details>
   <summary>Mobile Issues</summary>
 
-  ### AOS
+  <!-- ### AOS
   - 웹뷰에서 인풋 요소에 포커스가 되어도 키패드가 올라오지 않음(앱에서 해결)
-  - 웹뷰에서 Alert으로 디버깅이 바로 되지 않음(앱에서 해결)
+  - 웹뷰에서 Alert으로 디버깅이 바로 되지 않음(앱에서 해결) -->
 
   ### iOS
   - 3D transform에서 z-index가 제대로 인식되지 않는 경우
@@ -138,6 +138,40 @@
     }
     return params.toString()
   }
+  ```
+</details>
+
+<details>
+  <summary>웹 폰트 로드 최적화</summary>
+  
+  ```js
+  const cssHref = 'css/webfont.css'
+
+  const isFileCached = (href) => {
+    return localStorage.font_css_cache &&
+      (localStorage.font_css_cache_file === href)
+  }
+
+  const injectRawStyle = (text) => {
+    const style = document.createElement('style')
+    style.innerHTML = text
+    document.getElementsByTagName('head')[0].appendChild(style)
+  }
+
+  const requestFontCssToServer = async () => {
+    const { data } = await axios.get(`${location.origin}/${cssHref}`)
+    injectRawStyle(data)
+    localStorage.font_css_cache = data
+    localStorage.font_css_cache_file = cssHref
+  }
+
+  const injectFontsStylesheet = () => {
+    if (isFileCached(cssHref)) return injectRawStyle(localStorage.font_css_cache)
+    requestFontCssToServer()
+  }
+
+  if (localStorage.font_css_cache) return injectFontsStylesheet()
+  addEventListener('load', injectFontsStylesheet, false)
   ```
 </details>
 
