@@ -142,7 +142,7 @@
 </details>
 
 <details>
-  <summary>웹 폰트 로드 최적화</summary>
+  <summary>Optimize to load the Web font</summary>
   
   ```js
   const cssHref = 'css/webfont.css'
@@ -172,6 +172,53 @@
 
   if (localStorage.font_css_cache) return injectFontsStylesheet()
   addEventListener('load', injectFontsStylesheet, false)
+  ```
+</details>
+
+<details>
+  <summary>Resize to Base64</summary>
+
+  ```js
+  const resize = (imageFile, maxSize = { width: 800, height: 800 }) => {
+    return new Promise((resolve, reject) => {
+      const image = new Image()
+      image.onload = () => {
+        const canvas = document.createElement('canvas')
+        let width = image.width
+        let height = image.height
+        const horizontalType = width > height
+        if (horizontalType) {
+          if (!(width > maxSize.width)) return
+          height *= maxSize.width / width
+          width = maxSize.width
+        } else {
+          if (!(height > maxSize.height)) return
+          width *= maxSize.height / height
+          height = maxSize.height
+        }
+        canvas.width = width
+        canvas.height = height
+        canvas.getContext('2d').drawImage(image, 0, 0, width, height)
+        const photoFile = canvas.toDataURL('image/png')
+        resolve(photoFile)
+      }
+      image.src = imageFile
+    })
+  }
+
+  const toBase64 = (file, resizable = true, maxSize = { width: 800, height: 800 }) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    return new Promise((resolve, reject) => {
+      reader.onerror = error => {
+        reject(error)
+      }
+      reader.onloadend = async (event) => {
+        if (!resizable) return resolve(event.target.result)
+        resolve(await resize(event.target.result, maxSize))
+      }
+    })
+  }
   ```
 </details>
 
