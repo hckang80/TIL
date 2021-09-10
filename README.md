@@ -142,7 +142,7 @@
 </details>
 
 <details>
-  <summary>Optimize to load the Web font</summary>
+  <summary>Optimize to load the Web font (feat. axios)</summary>
   
   ```js
   const cssHref = 'css/webfont.css'
