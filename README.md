@@ -225,11 +225,7 @@
 <details>
   <summary>Reference</summary>
   
-  [User Agent 등의 속성 출력](https://jsfiddle.net/xkfdnwzq/show)
-
-  [Vanilla JS SPA Routing](https://kdydesign.github.io/2020/10/06/spa-route-tutorial/)
-  
-  [Vanilla JS State Management](https://velog.io/@jakeseo_me/%EB%B0%94%EB%8B%90%EB%9D%BC-JS1-%EB%B0%94%EB%8B%90%EB%9D%BC-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-Redux%EA%B0%99%EC%9D%80-%EB%82%98%EB%A7%8C%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0)
+  - [User Agent 등의 속성 출력](https://jsfiddle.net/xkfdnwzq/show)
 </details>
 
 ## 컴퓨터 공학
