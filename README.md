@@ -49,7 +49,7 @@
   ### iOS
   - 3D transform에서 z-index가 제대로 인식되지 않는 경우
   ```css
-  selector {
+  .selector {
     transform-style: preserve-3d;
     transform: translateZ(-1000px);
   }
