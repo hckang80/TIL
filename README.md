@@ -191,7 +191,7 @@
   }
 
   const requestFontCssToServer = async () => {
-    const { data } = await axios.get(`${location.origin}/${cssHref}`)
+    const data = await fetch(`${location.origin}/${cssHref}`).then(res => res.text())
     injectRawStyle(data)
     localStorage.font_css_cache = data
     localStorage.font_css_cache_file = cssHref
