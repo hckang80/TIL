@@ -271,6 +271,10 @@
 
 - [220609.md](./_220609.md)  
   클린 아키텍처
+
+- [220610.md](./_220610.md)  
+  git pull 이슈, Intersection Observer API
+
 ## HTML, CSS
 
 - [180115.md](./_180115.md)  
