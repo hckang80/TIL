@@ -280,6 +280,14 @@
 
   https://medium.com/@shinbaek89/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-business-logic%EC%9D%98-%EB%B6%84%EB%A6%AC-adc10ae881ab
 
+- Dependency Injection (DI)
+
+  제어권의 역전을 통해 의존성을 주입하므로 유연한 확장이 가능해짐
+  
+  https://medium.com/@HoseungJang/typescript%EC%99%80-typedi%EB%A1%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-5d83ef1977f9
+
+  https://darrengwon.tistory.com/1363
+
 ## HTML, CSS
 
 - [180115.md](./_180115.md)  
