@@ -269,13 +269,25 @@
 
 ## 기타
 
-- [220609.md](./_220609.md)  
-  클린 아키텍처
-
 - [220610.md](./_220610.md)  
   git pull 이슈, Intersection Observer API  
 
 ## 아키텍처
+- 클린 아키텍처
+
+  https://joonfluence.tistory.com/322
+
+  - Data Layer - 변경 가능성이 적은 인터페이스나 (클래스의 )속성 및 메소드
+    - Entity - 서버 응답 인터페이스 등
+    - DataSource - 서버와 통신하는 메소드 등
+  - Domain Layer - 데이터를 가공하거나 출력하는 로직
+    - Repository & Translater - 데이터 저장 및 수정 등의 기능 제공
+    - Model - Entity를 사용할 수 있는 데이터 형식으로 변경
+    - UseCase - 비즈니스 로직
+  - Presentation Layer - 내부 비즈니스 로직을 변경하지 않고 더 좋은 프레임워크로 변경이 쉽도록 작성하는 부분. 프레임워크에 대한 의존성이 낮아야함 (현재는 한 차례 랩핑하여 사용하는 방식으로 이해했음. 어댑터 패턴에 대해 확인 필요)
+    - Presenter - MobX 등
+    - View
+
 - Business Logic의 분리
 
   https://medium.com/@shinbaek89/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-business-logic%EC%9D%98-%EB%B6%84%EB%A6%AC-adc10ae881ab
@@ -283,7 +295,7 @@
 - Dependency Injection (DI)
 
   제어권의 역전을 통해 의존성을 주입하므로 유연한 확장이 가능해짐
-  
+
   https://medium.com/@HoseungJang/typescript%EC%99%80-typedi%EB%A1%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-5d83ef1977f9
 
   https://darrengwon.tistory.com/1363
