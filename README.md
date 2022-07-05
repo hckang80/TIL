@@ -18,13 +18,14 @@
   }
   ```
 
-  ### 특수기호
-  - \d : 숫자만
-  - \D : \d와 반대
-  - \w : 영문 대소문자 + 숫자 + 언더바
-  - \W : \w 이외의 문자
-  - \s : 공백 문자
-  - \S : \s 이외의 문자
+### 특수기호
+
+- \d : 숫자만
+- \D : \d와 반대
+- \w : 영문 대소문자 + 숫자 + 언더바
+- \W : \w 이외의 문자
+- \s : 공백 문자
+- \S : \s 이외의 문자
 </details>
 
 <details>
@@ -46,110 +47,118 @@
   </div>
   ```
 
-  ```css
-  .ratings {
-    position: relative;
-    vertical-align: middle;
-    display: inline-block;
-    color: #b1b1b1;
-    overflow: hidden;
-  }
-  .full-stars {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #fde16d;
-  }
-  .empty-stars:before, .full-stars:before {
-    content:"\2605\2605\2605\2605\2605";
-    font-size: 14pt;
-  }
-  .empty-stars:before {
-    -webkit-text-stroke: 1px #848484;
-  }
-  .full-stars:before {
-    -webkit-text-stroke: 1px orange;
-  }
-  ```
+```css
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #b1b1b1;
+  overflow: hidden;
+}
+.full-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fde16d;
+}
+.empty-stars:before,
+.full-stars:before {
+  content: "\2605\2605\2605\2605\2605";
+  font-size: 14pt;
+}
+.empty-stars:before {
+  -webkit-text-stroke: 1px #848484;
+}
+.full-stars:before {
+  -webkit-text-stroke: 1px orange;
+}
+```
+
 </details>
 
 <details>
   <summary>Mobile Issues</summary>
 
-  ### iOS
-  - 3D transform에서 z-index가 제대로 인식되지 않는 경우
-  ```css
-  .selector {
-    transform-style: preserve-3d;
-    transform: translateZ(-1000px);
-  }
-  ```
+### iOS
+
+- 3D transform에서 z-index가 제대로 인식되지 않는 경우
+
+```css
+.selector {
+  transform-style: preserve-3d;
+  transform: translateZ(-1000px);
+}
+```
+
 </details>
 
 <details>
   <summary>Generator</summary>
 
-  ```js
-  // Generate a random ID
-  const id = Math.random().toString(36).slice(2)
-  console.log(id) // p0ambi8jhik
-  ```
-  
-  ```js
-  // Shuffle an array
-  const arr = ['A', 'B', 'C', 'D', 'E']
-  const shuffled = [...arr].sort(() => Math.random() - 0.5)
-  console.log(shuffled) // ['D', 'A', 'B', 'C', 'E']
-  ```
-  
-  ```js
-  // Object deep search
-  const objectDeepSearch = ({ model = {}, path = '' }) => {
-    const list = path.split('.')
-    const key = list.pop()
-    const pointer = list.reduce((object, prop) => {
-      if (object[prop] === undefined) object[prop] = {}
-      return object[prop]
-    }, model)
-    const result = { pointer, key }
-    return result
-  }
+```js
+// Generate a random ID
+const id = Math.random().toString(36).slice(2);
+console.log(id); // p0ambi8jhik
+```
 
-  const model = {
-    name: {
-      first: 'Hee-chang'
-    }
-  }
-  console.log(objectDeepSearch({ model, path: 'name.first' })) // { pointer: { first: 'Hee-chang' }, key: 'first' }
-  ```
-  
-  ```js
-  // Compact Number
-  const compactNumber = (value) => {
-    const suffixes = ['', 'k', 'm', 'b', 't']
-    const suffixNum = Math.floor(('' + value).length / 3)
-    let shortValue = parseFloat((suffixNum ? value / Math.pow(1000, suffixNum) : value).toPrecision(2))
-    !(shortValue % 1) && (shortValue = shortValue.toFixed(1))
-    return shortValue + suffixes[suffixNum]
-  }
-  console.log(compactNumber(100000)) // '0.1m'
-  ```
-  
-  ```js
-  // Ordinal Suffix
-  const ordinalSuffix = (number) => {
-    const j = number % 10
-    const k = number % 100
-    let suffix = 'th'
-    j === 1 && k !== 11 && (suffix = 'st')
-    j === 2 && k !== 12 && (suffix = 'nd')
-    j === 3 && k !== 13 && (suffix = 'rd')
-    return `${number}${suffix}`
-  }
-  console.log(ordinalSuffix(1)) // '1st'
-  ```
+```js
+// Shuffle an array
+const arr = ["A", "B", "C", "D", "E"];
+const shuffled = [...arr].sort(() => Math.random() - 0.5);
+console.log(shuffled); // ['D', 'A', 'B', 'C', 'E']
+```
+
+```js
+// Object deep search
+const objectDeepSearch = ({ model = {}, path = "" }) => {
+  const list = path.split(".");
+  const key = list.pop();
+  const pointer = list.reduce((object, prop) => {
+    if (object[prop] === undefined) object[prop] = {};
+    return object[prop];
+  }, model);
+  const result = { pointer, key };
+  return result;
+};
+
+const model = {
+  name: {
+    first: "Hee-chang",
+  },
+};
+console.log(objectDeepSearch({ model, path: "name.first" })); // { pointer: { first: 'Hee-chang' }, key: 'first' }
+```
+
+```js
+// Compact Number
+const compactNumber = (value) => {
+  const suffixes = ["", "k", "m", "b", "t"];
+  const suffixNum = Math.floor(("" + value).length / 3);
+  let shortValue = parseFloat(
+    (suffixNum ? value / Math.pow(1000, suffixNum) : value).toPrecision(2)
+  );
+  !(shortValue % 1) && (shortValue = shortValue.toFixed(1));
+  return shortValue + suffixes[suffixNum];
+};
+console.log(compactNumber(100000)); // '0.1m'
+```
+
+```js
+// Ordinal Suffix
+const ordinalSuffix = (number) => {
+  const j = number % 10;
+  const k = number % 100;
+  let suffix = "th";
+  j === 1 && k !== 11 && (suffix = "st");
+  j === 2 && k !== 12 && (suffix = "nd");
+  j === 3 && k !== 13 && (suffix = "rd");
+  return `${number}${suffix}`;
+};
+console.log(ordinalSuffix(1)); // '1st'
+```
+
 </details>
 
 <details>
@@ -179,79 +188,81 @@
   ```js
   const cssHref = 'css/webfont.css'
 
-  const isFileCached = (href) => {
-    return localStorage.font_css_cache &&
-      (localStorage.font_css_cache_file === href)
-  }
+const isFileCached = (href) => {
+return localStorage.font_css_cache &&
+(localStorage.font_css_cache_file === href)
+}
 
-  const injectRawStyle = (text) => {
-    const style = document.createElement('style')
-    style.innerHTML = text
-    document.getElementsByTagName('head')[0].appendChild(style)
-  }
+const injectRawStyle = (text) => {
+const style = document.createElement('style')
+style.innerHTML = text
+document.getElementsByTagName('head')[0].appendChild(style)
+}
 
-  const requestFontCssToServer = async () => {
-    const data = await fetch(`${location.origin}/${cssHref}`).then(res => res.text())
-    injectRawStyle(data)
-    localStorage.font_css_cache = data
-    localStorage.font_css_cache_file = cssHref
-  }
+const requestFontCssToServer = async () => {
+const data = await fetch(`${location.origin}/${cssHref}`).then(res => res.text())
+injectRawStyle(data)
+localStorage.font_css_cache = data
+localStorage.font_css_cache_file = cssHref
+}
 
-  const injectFontsStylesheet = () => {
-    if (isFileCached(cssHref)) return injectRawStyle(localStorage.font_css_cache)
-    requestFontCssToServer()
-  }
+const injectFontsStylesheet = () => {
+if (isFileCached(cssHref)) return injectRawStyle(localStorage.font_css_cache)
+requestFontCssToServer()
+}
 
-  if (localStorage.font_css_cache) return injectFontsStylesheet()
-  addEventListener('load', injectFontsStylesheet, false)
-  ```
+if (localStorage.font_css_cache) return injectFontsStylesheet()
+addEventListener('load', injectFontsStylesheet, false)
+
+````
 </details>
 
 <details>
-  <summary>Resize to Base64</summary>
+<summary>Resize to Base64</summary>
 
-  ```js
-  const resize = (imageFile, maxSize = { width: 800, height: 800 }) => {
-    return new Promise((resolve, reject) => {
-      const image = new Image()
-      image.onload = () => {
-        const canvas = document.createElement('canvas')
-        let width = image.width
-        let height = image.height
-        const horizontalType = width > height
-        if (horizontalType) {
-          if (!(width > maxSize.width)) return
-          height *= maxSize.width / width
-          width = maxSize.width
-        } else {
-          if (!(height > maxSize.height)) return
-          width *= maxSize.height / height
-          height = maxSize.height
-        }
-        canvas.width = width
-        canvas.height = height
-        canvas.getContext('2d').drawImage(image, 0, 0, width, height)
-        const photoFile = canvas.toDataURL('image/png')
-        resolve(photoFile)
+```js
+const resize = (imageFile, maxSize = { width: 800, height: 800 }) => {
+  return new Promise((resolve, reject) => {
+    const image = new Image()
+    image.onload = () => {
+      const canvas = document.createElement('canvas')
+      let width = image.width
+      let height = image.height
+      const horizontalType = width > height
+      if (horizontalType) {
+        if (!(width > maxSize.width)) return
+        height *= maxSize.width / width
+        width = maxSize.width
+      } else {
+        if (!(height > maxSize.height)) return
+        width *= maxSize.height / height
+        height = maxSize.height
       }
-      image.src = imageFile
-    })
-  }
+      canvas.width = width
+      canvas.height = height
+      canvas.getContext('2d').drawImage(image, 0, 0, width, height)
+      const photoFile = canvas.toDataURL('image/png')
+      resolve(photoFile)
+    }
+    image.src = imageFile
+  })
+}
 
-  const toBase64 = (file, resizable = true, maxSize = { width: 800, height: 800 }) => {
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    return new Promise((resolve, reject) => {
-      reader.onerror = error => {
-        reject(error)
-      }
-      reader.onloadend = async (event) => {
-        if (!resizable) return resolve(event.target.result)
-        resolve(await resize(event.target.result, maxSize))
-      }
-    })
-  }
-  ```
+const toBase64 = (file, resizable = true, maxSize = { width: 800, height: 800 }) => {
+  const reader = new FileReader()
+  reader.readAsDataURL(file)
+  return new Promise((resolve, reject) => {
+    reader.onerror = error => {
+      reject(error)
+    }
+    reader.onloadend = async (event) => {
+      if (!resizable) return resolve(event.target.result)
+      resolve(await resize(event.target.result, maxSize))
+    }
+  })
+}
+````
+
 </details>
 
 <details>
@@ -270,9 +281,30 @@
 ## 기타
 
 - [220610.md](./_220610.md)  
-  git pull 이슈, Intersection Observer API  
+  git pull 이슈, Intersection Observer API
+
+## 설정
+
+<details>
+  <summary>Prettier</summary>
+
+1. vscode 확장팩 설치
+2. (옵션) 프로젝트 폴더 root에 .prettierrc 생성
+3. settings.json에 다음의 명령어 입력
+
+```
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+```
+
+4. 레퍼런스
+
+   https://heewon26.tistory.com/262
+
+</details>
 
 ## 아키텍처
+
 - 클린 아키텍처
 
   https://joonfluence.tistory.com/322
@@ -324,7 +356,6 @@
 - [180129.md](./_180129.md)  
   JS History
 
-
 - [180130.md](./_180130.md)  
   자료형과 변수
 - [180201.md](./_180201.md)  
@@ -346,14 +377,12 @@
 - [180223.md](./_180223.md)  
   REST API
 
-
-
 ## ES6
 
 - [180226.md](./_180226.md)  
   let, const, Arrow function
 
-- [180227.md](./_180227.md)  
+- [180227.md](./_180227.md)
 
   기본 파라미터 초기값, Rest 파라미터, Spread 연산자, 디스트럭처링, 클래스
 
