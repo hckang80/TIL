@@ -297,6 +297,17 @@ const toBase64 = (file, resizable = true, maxSize = { width: 800, height: 800 })
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 ```
 
+```
+// .prettierrc
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 100
+}
+```
+
 4. 레퍼런스
 
    https://heewon26.tistory.com/262
