@@ -31,21 +31,67 @@
 <details>
   <summary>CSS Tricks</summary>
   
-  ```css
-  /* Hidden cursor only */
-  input {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
-  ```
-  
   ```html
-  <!-- Rating Stars -->
-  <div class="ratings">
-    <div class="empty-stars"></div>
-    <div class="full-stars" style="width:70%"></div>
+  <!-- Marquee -->
+  <div class="marquee">
+    <ul class="marquee__content">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <!-- Mirrors the content above -->
+    <ul class="marquee__content" aria-hidden="true">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
   </div>
   ```
+
+```css
+.marquee {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+
+.marquee__content {
+  --duration: 70s;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll var(--duration) linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+```
+
+```css
+/* Hidden cursor only */
+input {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+```
+
+```html
+<!-- Rating Stars -->
+<div class="ratings">
+  <div class="empty-stars"></div>
+  <div class="full-stars" style="width:70%"></div>
+</div>
+```
 
 ```css
 .ratings {
