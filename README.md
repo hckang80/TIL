@@ -30,23 +30,61 @@
 
 <details>
   <summary>CSS Tricks</summary>
-  
-  ```html
-  <!-- Marquee -->
-  <div class="marquee">
-    <ul class="marquee__content">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-    <!-- Mirrors the content above -->
-    <ul class="marquee__content" aria-hidden="true">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-  </div>
-  ```
+
+```html
+<!-- Circle animation -->
+<svg class="circle__svg" width="28" height="28" viewBox="0 0 120 120">
+  <circle class="circle__frame" cx="60" cy="60" r="54" />
+  <circle class="circle__progress" cx="60" cy="60" r="54" />
+</svg>
+```
+
+```scss
+.circle {
+  &__svg {
+    display: block;
+    transform: rotate(-90deg);
+  }
+  &__frame,
+  &__progress {
+    stroke-width: 10;
+  }
+  &__frame {
+    fill: none;
+    stroke: lightgray;
+  }
+  &__progress {
+    fill: none;
+    stroke: orange;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: stroke 2s ease-out forwards infinite;
+  }
+}
+
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+```
+
+```html
+<!-- Marquee -->
+<div class="marquee">
+  <ul class="marquee__content">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <!-- Mirrors the content above -->
+  <ul class="marquee__content" aria-hidden="true">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+```
 
 ```css
 .marquee {
