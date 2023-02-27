@@ -31,6 +31,11 @@
 <details>
   <summary>CSS Tricks</summary>
 
+```css
+/* To gray */
+filter: opacity(25%) saturate(0%) brightness(70%) contrast(1000%);
+```
+
 ```html
 <!-- Circle animation -->
 <svg class="circle__svg" width="28" height="28" viewBox="0 0 120 120">
